@@ -1,5 +1,12 @@
 // Colors
-$bgDark: #eff1f5;
+$bg: #eff1f5;
+$bgMid: #d6d6d6;
+$fg: #303030;
+$fgMid: #525252;
+$accent: #8839ef;
+$accentLight: #c293ff;
+
+// REPLACE
 $bgMed: #ebebeb;
 $bgLight: #e2e2e2;
 $bgLighter: #c0c0c0;
@@ -52,7 +59,7 @@ $cur_locateRef: url("../cursors/locate.svg") 16 16, zoom-out;
 body {
   margin: 0;
   padding: 0;
-  background: $bgDark;
+  background: $bg;
   color: black;
   @include defaultFont();
   font-size: 11pt;
@@ -158,7 +165,7 @@ button {
   margin: 1px;
   padding: 10px;
 
-  color: white;
+  color: $fg;
   text-transform: uppercase;
   text-align: center;
   border: none;
@@ -173,7 +180,7 @@ button {
     text-shadow: none;
     box-shadow: 0px 0px 2px $bgLighter inset;
     cursor: not-allowed;
-    background-color: $bgDark;
+    background-color: $bg;
     background-image: url("../img/stripesLight.png");
     background-repeat: repeat;
 
@@ -291,16 +298,16 @@ button {
     padding: 8px;
     font-size: 10pt;
     text-transform: none;
-    background-color: $helpDark;
-    color: $help;
+    background-color: $accent;
+    color: $bg;
     &:hover {
       background-color: $helpMed;
-      color: white;
+      color: $fg;
     }
   }
 
   &.toggle {
-    background-color: $bgDark;
+    background-color: $bg;
     box-shadow: none;
     border-radius: 2px;
     &.on {
@@ -333,7 +340,7 @@ button {
   }
 
   &.dark {
-    background-color: scale-color($color: $bgDark, $lightness: 10%);
+    background-color: scale-color($color: $bg, $lightness: 10%);
     box-shadow: 0px 0px 2px $bgLight inset, 0px 0px 3px black, 0px 2px 2px black;
     &:hover {
       background-color: $bgLight;
@@ -404,9 +411,9 @@ button {
   display: none;
   overflow: hidden;
 
-  color: white;
+  color: $fg;
   font-size: 9pt;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(136, 57, 239, 0.562);
   padding: 4px;
   padding-left: 16px;
   border-radius: 3px;
@@ -568,7 +575,7 @@ a.exploreTo {
   margin-bottom: 20px;
   min-width: 400px;
   height: 8px;
-  background-color: $bgDark;
+  background-color: $bg;
   border: 1px solid $orange;
   padding: 1px;
   border-radius: 2px;
@@ -595,9 +602,8 @@ a.exploreTo {
     z-index: 2;
     right: 1px;
     top: 12px;
-    color: white;
     font-size: 9pt;
-    color: $bgLighter;
+    color: $accent;
   }
 }
 
@@ -607,7 +613,7 @@ div.warning:not(.window) {
   margin-top: 4px;
   margin-bottom: 16px;
   border: 1px dashed red;
-  color: white;
+  color: $fg;
   box-shadow: 0px 0px 32px darkred inset, 0px 0px 4px darkred;
   text-shadow: 0px -1px 4px red, 0px 1px 4px red;
   background-color: rgba(0, 0, 0, 0.66);
@@ -619,7 +625,7 @@ div.safe:not(.window) {
   margin-top: 4px;
   margin-bottom: 16px;
   border: 1px dashed $help;
-  color: white;
+  color: $fg;
   box-shadow: 0px 0px 32px $helpDark inset, 0px 0px 4px helpDark;
   text-shadow: 0px -1px 4px $help, 0px 1px 4px $helpDark;
   background-color: $helpDark;
@@ -820,7 +826,7 @@ div.key {
     font-size: 9pt;
 
     &:last-of-type {
-      color: white !important;
+      color: $fg !important;
       font-weight: bold;
       font-size: 10pt;
     }
@@ -833,7 +839,7 @@ div.key {
   span.highlight {
     padding: 2px 4px;
     border-radius: 2px;
-    color: white;
+    color: $fg;
     text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
   }
 }
@@ -850,7 +856,7 @@ canvas.tile {
   }
 
   &.multi {
-    box-shadow: 2px 2px 0px black, 3px 3px 0px white;
+    box-shadow: 2px 2px 0px $bg, 3px 3px 0px $fg;
   }
 
   &:not(.active) {
@@ -903,7 +909,7 @@ ul.niceList {
   padding: 4px;
   margin-top: 4px;
 
-  background-color: $bgDark;
+  background-color: $bg;
   overflow-x: hidden;
 
   &:not(ul.niceList ul.niceList) {
@@ -950,7 +956,7 @@ ul.niceList {
 
     font-size: 12pt;
 
-    // border-bottom: 1px solid $bgDark;
+    // border-bottom: 1px solid $bg;
     background-color: $bgMed;
     cursor: pointer;
 
@@ -1091,7 +1097,7 @@ ul.tabs {
   padding-left: 4px;
   justify-items: flex-end;
 
-  background-color: $bgDark;
+  background-color: $bg;
   border-bottom: 1px solid $orange;
   box-shadow: 0px -4px 0px black inset;
   // overflow-y: hidden;
@@ -1140,7 +1146,7 @@ ul.log {
   max-height: 80vh;
 
   border: 1px solid $bgLight;
-  background-color: $bgDark;
+  background-color: $bg;
   overflow: auto;
 
   li {
@@ -1793,9 +1799,9 @@ div.entityRef {
       &:checked {
         width: 100%;
         height: 100%;
-        background-color: $orange;
-        border: 1px solid $orangeLight;
-        box-shadow: 0px 0px 8px $orange;
+        background-color: $accent;
+        border: 1px solid $accentLight;
+        box-shadow: 0px 0px 8px $accent;
         opacity: 1;
         z-index: 1;
       }
@@ -1809,7 +1815,7 @@ div.entityRef {
     .options {
       display: grid;
       padding: 4px;
-      border: 1px solid $bgDark;
+      border: 1px solid $bg;
       border-radius: 3px;
     }
   }
@@ -1893,7 +1899,7 @@ dl.form {
       // border-width: 1px;
       // border-color: $bgLight;
       background-color: $bgLight;
-      color: $bgDark;
+      color: $bg;
       opacity: 0.45;
 
       &::before {
@@ -2176,7 +2182,7 @@ dl.form {
       cursor: pointer;
 
       box-sizing: border-box;
-      border: 4px solid $bgDark;
+      border: 4px solid $bg;
       outline: 1px solid $bgLighter;
       outline-offset: -2px;
 
@@ -2252,7 +2258,7 @@ select {
   &:disabled {
     color: $bgLighter;
     border-color: $bgMed;
-    background-color: $bgDark;
+    background-color: $bg;
     cursor: not-allowed;
     &:hover {
       border-color: $bgLight;
@@ -2334,7 +2340,7 @@ select {
     top: 0;
     height: 100%;
     pointer-events: none;
-    background-color: transparentize($color: $bgDark, $amount: 0.33);
+    background-color: transparentize($color: $bg, $amount: 0.33);
   }
 
   &:hover {
@@ -2348,7 +2354,7 @@ select {
     line-height: 24px;
     white-space: nowrap;
     overflow: hidden;
-    background-color: $bgDark;
+    background-color: $bg;
     border-radius: 3px;
 
     img {
@@ -2382,7 +2388,7 @@ select {
   .wrapper {
     padding: 0;
     border-radius: 3px;
-    background-color: $bgDark;
+    background-color: $bg;
     overflow: hidden;
     height: fit-content;
     padding: 1px;
@@ -2446,8 +2452,8 @@ select {
             gap: 2px;
             justify-items: center;
             font-size: 8pt;
-            border-top: 1px solid $bgDark;
-            border-left: 1px solid $bgDark;
+            border-top: 1px solid $bg;
+            border-left: 1px solid $bg;
             img {
               width: 48px;
             }
@@ -2541,10 +2547,10 @@ select {
           }
 
           &.focus {
-            outline: 1px solid $orangeLight;
+            outline: 1px solid $accentLight;
             outline-offset: -2px;
-            background-color: $orange !important;
-            color: black;
+            background-color: $accent !important;
+            color: $fg;
           }
         }
       }
@@ -2557,7 +2563,7 @@ input[type="number"] {
   display: block;
   padding: 8px;
   color: white;
-  background-color: $bgDark;
+  background-color: $bg;
   border: 1px solid $bgLight;
   &:disabled {
     color: $bgLight;
@@ -2640,7 +2646,7 @@ textarea {
   padding: 8px;
   color: white;
   overflow-y: auto;
-  background-color: $bgDark;
+  background-color: $bg;
   border: 1px solid $bgLight;
   box-shadow: 0px 0px 16px black inset;
   &:focus {
@@ -2753,7 +2759,7 @@ textarea {
     padding-bottom: 2px;
 
     border: 1px solid $bgLight;
-    background-color: $bgDark;
+    background-color: $bg;
     > * {
       margin-bottom: 2px;
     }
@@ -2767,7 +2773,7 @@ textarea {
       white-space: nowrap;
 
       border-radius: 3px;
-      border: 1px solid $bgDark;
+      border: 1px solid $bg;
 
       &.var {
         font-weight: bold;
@@ -2970,7 +2976,7 @@ textarea {
     min-width: 150px;
     margin-bottom: 8px;
 
-    background-color: $bgDark;
+    background-color: $bg;
     border: 1px solid $bgLight;
     border-right: 8px solid $bgLight;
     border-top-left-radius: 3px;
@@ -3129,7 +3135,7 @@ textarea {
   left: 0px;
   top: 0px;
   z-index: 98;
-  background: $bgDark;
+  background: $bg;
   // padding: 8px;
 
   li {
@@ -3171,7 +3177,7 @@ textarea {
   top: 85vh;
   width: 400px;
 
-  background-color: $bgDark;
+  background-color: $bg;
   box-shadow: 0px 0px 32px black, 0px 0px 16px black;
   border: 1px dashed $orange;
 
@@ -3499,7 +3505,7 @@ textarea {
       }
 
       .desc {
-        background-color: $bgDark;
+        background-color: $bg;
         padding: 8px;
         color: $help;
       }
@@ -3519,7 +3525,7 @@ textarea {
   .wrapper {
     border-radius: 8px;
     box-shadow: 0px 0px 48px black;
-    background-color: $bgDark;
+    background-color: $bg;
   }
 
   .wrapper .content {
@@ -3665,7 +3671,7 @@ textarea {
         font-size: 10pt;
         color: $orange;
         text-align: left;
-        background-color: $bgDark;
+        background-color: $bg;
         border-radius: 0;
 
         &.duplicate {
@@ -3881,7 +3887,7 @@ textarea {
 
     ul.fileList {
       padding: 8px;
-      background-color: $bgDark;
+      background-color: $bg;
       border-radius: 3px;
       font-family: "Courier New", Courier, monospace;
       font-size: 9pt;
@@ -3945,7 +3951,7 @@ textarea {
         color: $bgLighter;
       }
       option {
-        background-color: $bgDark;
+        background-color: $bg;
         color: white;
 
         &.def {
@@ -4027,7 +4033,7 @@ textarea {
       min-width: 400px;
       padding: 8px;
       margin-bottom: 8px;
-      background-color: $bgDark;
+      background-color: $bg;
       border-radius: 4px;
 
       .content {
@@ -4080,7 +4086,7 @@ textarea {
     .path {
       text-align: left;
       padding: 4px;
-      background-color: $bgDark;
+      background-color: $bg;
       border: 1px solid $red;
     }
   }
@@ -4092,7 +4098,7 @@ textarea {
     .path {
       text-align: left;
       padding: 4px;
-      background-color: $bgDark;
+      background-color: $bg;
       border: 1px solid $red;
     }
   }
@@ -4195,7 +4201,7 @@ textarea {
     &.major {
       dt {
         padding: 4px;
-        background-color: $bgDark;
+        background-color: $bg;
         border-radius: 4px;
       }
       dd {
@@ -4209,7 +4215,7 @@ textarea {
       dt {
         padding: 4px;
         padding-right: 8px;
-        background-color: $bgDark;
+        background-color: $bg;
         border-radius: 4px;
       }
       dd {
@@ -4268,7 +4274,7 @@ textarea {
 .window.dialog.colorPicker {
   > .wrapper {
     padding: 4px;
-    background-color: $bgDark;
+    background-color: $bg;
     border: 1px solid $bgMed;
     border-radius: 3px;
 
@@ -4535,7 +4541,7 @@ div.sortHandle {
   display: inline-block;
   background: url("../icons/drag.svg") no-repeat;
   background-position: center center;
-  border-right: 1px solid $bgDark;
+  border-right: 1px solid $bg;
   padding-left: 24px;
   padding-top: 32px;
   opacity: 0.3;
@@ -4626,7 +4632,7 @@ div.sortHandle {
   z-index: 999;
   width: 100vw;
   height: 100vh;
-  background-color: $bgDark;
+  background-color: $bg;
   pointer-events: none;
 }
 
@@ -4701,7 +4707,7 @@ canvas#webgl {
   height: 100vh;
   z-index: 9999;
   &:not(.transparent) {
-    background-color: transparentize($color: $bgDark, $amount: 0.6);
+    background-color: transparentize($color: $bg, $amount: 0.6);
     background-image: url("../img/stripesLight.png");
     background-repeat: repeat;
   }
@@ -4830,7 +4836,7 @@ canvas#webgl {
     overflow: hidden;
     grid-template-rows: repeat(4, min-content) auto;
     // grid-template-rows: min-content 250px min-content min-content auto;
-    background: $bgDark;
+    background: $bg;
     box-sizing: border-box;
     border-right: 2px solid black;
 
@@ -4888,7 +4894,7 @@ canvas#webgl {
 
         select {
           width: 100%;
-          background-color: $bgDark;
+          background-color: $bg;
           font-size: 9pt;
           color: $bgLight;
           option {
@@ -5117,7 +5123,7 @@ canvas#webgl {
         margin-top: 1px;
         box-sizing: border-box;
 
-        box-shadow: 0px 0px 8px $bgDark inset;
+        box-shadow: 0px 0px 8px $bg inset;
         outline-color: $bgLight;
         border-top: 1px solid $bgMed;
         background-image: url("../img/stripes.png");
@@ -5144,7 +5150,7 @@ canvas#webgl {
 
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    background-color: $bgDark;
+    background-color: $bg;
 
     &:empty {
       display: none;
@@ -5193,7 +5199,7 @@ canvas#webgl {
 
     display: grid;
     gap: 1px;
-    background-color: $bgDark;
+    background-color: $bg;
     padding: 3px;
     padding-left: 0;
     border-radius: 4px;
@@ -5318,7 +5324,7 @@ canvas#webgl {
       grid-auto-columns: min-content;
       gap: 2px;
       border-radius: 3px;
-      background-color: $bgDark;
+      background-color: $bg;
 
       li {
         display: flex;
@@ -5354,7 +5360,7 @@ canvas#webgl {
     left: calc($mainPanelNormalWid + 40px);
 
     display: grid;
-    background-color: $bgDark;
+    background-color: $bg;
     padding: 3px;
     border-radius: 4px;
     max-height: 70vh;
@@ -5487,7 +5493,7 @@ canvas#webgl {
           margin-top: 8px;
           padding-top: 8px;
           padding-bottom: 8px;
-          background-color: $bgDark;
+          background-color: $bg;
           border-radius: 3px;
 
           .element {
@@ -5632,7 +5638,7 @@ canvas#webgl {
   height: 100vh;
   align-content: center;
   justify-content: center;
-  background-color: $bgDark;
+  background-color: $bg;
 
   .wrapper {
     display: grid;
@@ -5660,7 +5666,7 @@ canvas#webgl {
   display: grid;
   align-items: center;
   justify-items: center;
-  background-color: $bgDark;
+  background-color: $bg;
   background-image: url("../img/stripes.png");
 
   & > .wrapper {
@@ -5749,7 +5755,7 @@ canvas#webgl {
   width: 100vw;
   height: 100vh;
   align-content: center;
-  background-color: $bgDark;
+  background-color: $bg;
 
   & > .wrapper {
     display: grid;
@@ -6047,15 +6053,15 @@ canvas#webgl {
           font-weight: bold;
           border: 0;
           padding: 3px 0px;
-          color: $darkRed;
+          color: $accent;
         }
 
         &:empty {
           padding: 40px;
         }
         &:empty::before {
-          color: $bgLighter;
-          text-shadow: 0px 2px 8px $bgDark, 0px 2px 2px $bgDark;
+          color: $fg;
+          text-shadow: 0px 2px 8px $bg, 0px 2px 2px $bg;
         }
 
         li .path {
@@ -6139,13 +6145,13 @@ canvas#webgl {
 
           &:first-of-type {
             &:hover {
-              outline-color: white;
+              outline-color: $fg;
             }
           }
 
           &.crash {
-            border: 1px solid $help;
-            background-color: $helpDark;
+            border: 1px solid $bgMid;
+            background-color: $bg;
             box-shadow: 0px 0px 16px $help;
           }
         }
@@ -6206,7 +6212,7 @@ canvas#webgl {
           &:hover {
             background-color: $bgLight;
           }
-          border-bottom: 1px solid $bgDark;
+          border-bottom: 1px solid $bg;
         }
 
         button.update {
@@ -6254,7 +6260,7 @@ canvas#webgl {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: $bgDark;
+  background-color: $bg;
   image-rendering: pixelated;
 
   &.entities,
@@ -6520,7 +6526,7 @@ canvas#webgl {
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-    background-color: $bgDark;
+    background-color: $bg;
 
     &[cursor="pan"] {
       cursor: grab;
@@ -6545,7 +6551,7 @@ canvas#webgl {
     height: 1em;
     font-size: 0.75em;
     padding: 1px 4px;
-    background-color: $bgDark;
+    background-color: $bg;
     box-shadow: -2px 2px 4px black;
     opacity: 0.7;
   }
@@ -6696,7 +6702,7 @@ canvas#webgl {
   box-sizing: border-box;
 
   box-shadow: -4px 0px 16px rgba(0, 0, 0, 0.6);
-  background-color: $bgDark;
+  background-color: $bg;
 
   transition: opacity 0.3s;
 
@@ -7813,7 +7819,7 @@ dl.form.fieldInstanceEditor {
 
   dd.intGridValues {
     padding: 10px;
-    background-color: $bgDark;
+    background-color: $bg;
     border-radius: 3px;
 
     .buttons {
@@ -7872,7 +7878,7 @@ dl.form.fieldInstanceEditor {
 
             &:hover {
               color: $orangeLight;
-              // background-color: $bgDark;
+              // background-color: $bg;
               outline: 1px dashed $bgLighter;
             }
           }
@@ -7981,7 +7987,7 @@ body.sorting ul.collapsedSortTarget {
   & > .wrapper {
     padding: 0;
     box-shadow: none;
-    background-color: $bgDark;
+    background-color: $bg;
     overflow: hidden;
   }
 
@@ -8305,7 +8311,7 @@ body.sorting ul.collapsedSortTarget {
         font-size: 9pt;
         color: $bgLighter;
 
-        background-color: $bgDark;
+        background-color: $bg;
         border-radius: 3px;
         cursor: pointer;
 
@@ -8327,7 +8333,7 @@ body.sorting ul.collapsedSortTarget {
     ul.ruleGroups {
       border: 1px solid $bgLight;
       overflow-y: auto;
-      background-color: $bgDark;
+      background-color: $bg;
 
       > li:last-child {
         margin-bottom: 30px;
@@ -8678,7 +8684,7 @@ body.sorting ul.collapsedSortTarget {
             align-items: center;
             padding: 2px;
 
-            background-color: $bgDark;
+            background-color: $bg;
             border-radius: 3px;
             border: 1px dashed transparent;
 
@@ -8786,7 +8792,7 @@ body.sorting ul.collapsedSortTarget {
 
                 &:focus,
                 &.editing {
-                  background-color: $bgDark;
+                  background-color: $bg;
                 }
 
                 &[name="random"] {
@@ -8823,7 +8829,7 @@ body.sorting ul.collapsedSortTarget {
                 }
 
                 &:hover {
-                  color: $bgDark;
+                  color: $bg;
                   background-color: $orange;
                 }
               }
@@ -9364,7 +9370,7 @@ $patternSize: 32px;
       height: 100%;
       padding: 16px;
       box-sizing: border-box;
-      background-color: $bgDark;
+      background-color: $bg;
       border-radius: 3px;
     }
 
@@ -9542,7 +9548,7 @@ $patternSize: 32px;
           right: 0;
           width: auto;
           padding: 3px 1px;
-          background-color: $bgDark;
+          background-color: $bg;
           &:hover {
             background-color: $orange;
           }
@@ -9737,7 +9743,7 @@ $patternSize: 32px;
                 outline: 2px solid white;
                 outline-offset: -1px;
                 .value {
-                  color: $bgDark;
+                  color: $bg;
                   background-color: white;
                   box-shadow: 0px 4px 8px
                     transparentize($color: black, $amount: 0.6);
@@ -9753,7 +9759,7 @@ $patternSize: 32px;
             padding: 8px;
             font-style: italic;
             background-image: url("../img/any.png");
-            border-color: $bgDark;
+            border-color: $bg;
             cursor: pointer;
 
             &:not(.active):hover {
@@ -9803,7 +9809,7 @@ $patternSize: 32px;
           margin-left: 8px;
           font-size: 9pt;
           border-radius: 3px;
-          background-color: $bgDark;
+          background-color: $bg;
         }
       }
     }
@@ -10421,7 +10427,7 @@ $patternSize: 32px;
 
           .cell {
             position: relative;
-            outline: 1px solid $bgDark;
+            outline: 1px solid $bg;
             outline-offset: -1px;
             cursor: pointer;
             &:not(:empty) {
@@ -10483,7 +10489,7 @@ $patternSize: 32px;
         .commands {
           white-space: pre-wrap;
           font-family: "Courier New", Courier, monospace;
-          background-color: $bgDark;
+          background-color: $bg;
           padding: 8px;
           text-shadow: none;
           border-radius: 3px;
@@ -10507,7 +10513,7 @@ $patternSize: 32px;
       min-height: 200px;
       max-height: 60vh;
       overflow: auto;
-      background-color: $bgDark;
+      background-color: $bg;
       border: 1px solid $bgLight;
       font-size: 8pt;
 
