@@ -660,7 +660,6 @@ class ProjectSaver extends dn.Process {
 		return dn.data.JsonPretty.stringify(
 			obj,
 			p.minifyJson ? Minified : Compact,
-			skipHeader ? null : Const.JSON_HEADER
 		);
 	}
 

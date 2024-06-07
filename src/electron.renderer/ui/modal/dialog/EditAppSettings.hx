@@ -13,23 +13,9 @@ class EditAppSettings extends ui.modal.Dialog {
 
 	function updateForm() {
 		// Init
-		loadTemplate("editAppSettings", { app: Const.APP_NAME, updateVer:App.ME.pendingUpdate==null ? null : App.ME.pendingUpdate.ver });
+		loadTemplate("editAppSettings", { app: Const.APP_NAME, updateVer: null });
 		var jForm = jContent.find(".form");
 		jForm.off().find("*").off();
-
-		// Update available
-		if( App.ME.pendingUpdate==null )
-			jContent.find(".update").hide();
-		else {
-			jContent.find(".update").click(_->{
-				if( App.ME.pendingUpdate.github ) {
-					App.ME.checkForUpdate();
-				}
-				else
-					electron.Shell.openExternal(Const.DOWNLOAD_URL);
-				close();
-			});
-		}
 
 		// Log button
 		jContent.find(".logPath").text( JsTools.getLogPath() );
@@ -64,19 +50,6 @@ class EditAppSettings extends ui.modal.Dialog {
 			onSettingChanged();
 			needRestart = true;
 		}
-
-		// Auto update
-		var i = Input.linkToHtmlInput(settings.v.autoInstallUpdates, jForm.find("#autoUpdate"));
-		i.onChange = ()->{
-			onSettingChanged();
-			needRestart = true;
-		}
-		i.setEnabled( NT.isWindows() );
-		var jUnsupported = jForm.find("#autoUpdate").siblings(".unsupported");
-		if( NT.isWindows() )
-			jUnsupported.hide();
-		else
-			jUnsupported.show();
 
 		// Fullscreen
 		var i = Input.linkToHtmlInput(settings.v.startFullScreen, jForm.find("#startFullScreen"));
