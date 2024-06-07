@@ -20,6 +20,7 @@ class Project {
 	var dummyWorldIid : String;
 
 	public var jsonVersion : String;
+	public var appBuildId : Float;
 	public var defaultPivotX : Float;
 	public var defaultPivotY : Float;
 	public var defaultGridSize : Int;
@@ -265,6 +266,7 @@ class Project {
 		p.iid = JsonTools.readString(json.iid);
 		p.filePath.parseFilePath(filePath);
 		p.jsonVersion = JsonTools.readString(json.jsonVersion, Const.getJsonVersion());
+		p.appBuildId = JsonTools.readFloat(json.appBuildId, -1);
 		p.nextUid = JsonTools.readInt( json.nextUid, 0 );
 		p.identifierStyle = JsonTools.readEnum(ldtk.Json.IdentifierStyle, json.identifierStyle, false, Capitalize);
 
@@ -629,6 +631,7 @@ class Project {
 		var json : ldtk.Json.ProjectJson = {
 			iid: iid,
 			jsonVersion: jsonVersion,
+			appBuildId: Const.getAppBuildId(),
 			nextUid: nextUid,
 			identifierStyle: JsonTools.writeEnum(identifierStyle, false),
 

@@ -72,9 +72,17 @@ class ProjectLoader {
 				if( json==null )
 					return;
 
-				log.add(tag, "  Project appJsonVersion="+Const.getJsonVersion()+" jsonVersion="+json.jsonVersion);
+				log.add(tag, "  Project appBuildId="+json.appBuildId+" appJsonVersion="+Const.getJsonVersion()+" jsonVersion="+json.jsonVersion);
 
 				if( !App.ME.isInAppDir(filePath,true) ) { // not a sample
+					// Project was created with an older appBuildId
+					#if !debug
+					if( json.appBuildId==null || json.appBuildId < Const.getAppBuildId() ) {
+						log.add(tag, "  Need re-saving (reason: json appBuildId is older)");
+						needReSaving = true;
+					}
+					#end
+
 					// Project has an older JSON version
 					if( json!=null && Version.lower(json.jsonVersion, Const.getJsonVersion(), false) ) {
 						log.add(tag, "  Need re-saving (reason: json version is older than app)");
