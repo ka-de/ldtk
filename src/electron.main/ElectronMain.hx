@@ -77,10 +77,7 @@ class ElectronMain {
 			var ver = new dn.Version( MacroTools.getAppVersion() );
 
 			splash
-				.loadFile('assets/splash.html', { query:{
-					mainVersion : ver.major+"."+ver.minor,
-					patchVersion : ver.patch>0 ? "."+ver.patch : "",
-				}})
+				.loadFile('assets/splash.html')
 				.then(
 					_->createMainWindow(),
 					_->fileNotFound("splash.html")

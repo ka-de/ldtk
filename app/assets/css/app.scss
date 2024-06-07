@@ -3607,26 +3607,6 @@ textarea {
       align-items: stretch;
       font-family: Roboto;
 
-      .version {
-        display: grid;
-        align-items: center;
-        grid-template-columns: min-content min-content;
-        padding: 16px;
-        font-size: 50pt;
-        line-height: 55pt;
-        color: $bgDark;
-        background-color: $orange;
-        white-space: nowrap;
-
-        em {
-          font-style: normal;
-        }
-
-        &.long {
-          font-size: 35pt;
-        }
-      }
-
       .title {
         display: grid;
         align-items: center;
@@ -3650,35 +3630,6 @@ textarea {
         align-items: flex-start;
         padding: 8px;
         width: auto;
-      }
-    }
-
-    .newUpdate {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 200px;
-      pointer-events: none;
-      z-index: 1;
-
-      span {
-        display: block;
-        position: absolute;
-        transform: rotate(45deg);
-        top: 65px;
-        left: -50px;
-        width: 300px;
-        padding: 16px;
-        white-space: nowrap;
-        box-shadow: 0px 4px 8px black;
-
-        text-align: center;
-        font-size: 1.3em;
-        font-family: Roboto;
-        text-transform: uppercase;
-        color: black;
-        background-color: $orange;
       }
     }
 
