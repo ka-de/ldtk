@@ -2,7 +2,7 @@
 
 package codemirror;
 
-@:enum
+enum
 abstract ExecCommand(String) {
 	var GoLineStart = "goLineStart";
 	var GoLineEnd = "goLineEnd";

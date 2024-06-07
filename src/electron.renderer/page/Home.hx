@@ -172,7 +172,7 @@ class Home extends Page {
 		var jRecentFiles = jPage.find("ul.recentFiles");
 		jRecentFiles.empty();
 		if( recents.length>0 )
-			jRecentFiles.append('<li class="title">Recent projects</li>');
+			jRecentFiles.append('<li class="title">RECENT PROJECTS</li>');
 
 		var i = recents.length-1;
 		while( i>=0 ) {
@@ -293,7 +293,7 @@ class Home extends Page {
 		var jRecentDirs = jPage.find("ul.recentDirs");
 		jRecentDirs.empty();
 		if( dirs.length>0 )
-			jRecentDirs.append('<li class="title">Recent folders</li>');
+			jRecentDirs.append('<li class="title">RECENT FOLDERS</li>');
 		for(fp in dirs) {
 			var jLi = new J('<li/>');
 			try {

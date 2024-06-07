@@ -1,9 +1,9 @@
 // Colors
-$bgDark: #1e2229;
-$bgMed: #2e333f;
-$bgLight: #545d73;
-$bgLighter: #737f9d;
-$almostWhite: #c1cfeb;
+$bgDark: #eff1f5;
+$bgMed: #ebebeb;
+$bgLight: #e2e2e2;
+$bgLighter: #c0c0c0;
+$almostWhite: #a7a7a7;
 $lightRed: #ffa386;
 $red: #e34d00;
 $darkRed: #791105;
@@ -12,10 +12,10 @@ $orangeLight: #ffff44;
 $orange: #ffcc00;
 $darkOrange: #d56932;
 $green: #cfdd40;
-$help: #79dd8a;
-$helpMed: #5eab6b;
-$helpDark: #3c6148;
-$helpDarker: #273f2f;
+$help: #3c6148;
+$helpMed: #528b65;
+$helpDark: #5eab6b;
+$helpDarker: #79dd8a;
 $editingOptionsY: 46px;
 $mainPanelNormalWid: 300px;
 $mainPanelCompactWid: 80px;
@@ -53,7 +53,7 @@ body {
   margin: 0;
   padding: 0;
   background: $bgDark;
-  color: white;
+  color: black;
   @include defaultFont();
   font-size: 11pt;
 }
@@ -5777,11 +5777,6 @@ canvas#webgl {
       align-self: stretch;
       align-items: center;
 
-      background-image: url("../img/homeBg_header.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: bottom center;
-
       .appIcon {
         width: 140px;
         height: 140px;
@@ -5888,11 +5883,6 @@ canvas#webgl {
       box-sizing: border-box;
       padding-top: 30px;
       height: 100%;
-
-      background-image: url("../img/homeBg_main.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: top center;
     }
 
     .buttons {
@@ -6052,8 +6042,12 @@ canvas#webgl {
         min-height: 0;
 
         li.title {
+          text-transform: uppercase;
+          font-size: 16pt;
+          font-weight: bold;
           border: 0;
           padding: 3px 0px;
+          color: $darkRed;
         }
 
         &:empty {
@@ -7174,11 +7168,11 @@ dl.form.fieldInstanceEditor {
     min-height: 32px;
     padding: 4px;
 
-    color: white;
-    text-shadow: 0px 2px 2px black, 0px 0px 8px black;
+    color: black;
+    text-shadow: 0px 2px 2px white, 0px 0px 8px white;
 
-    border: 1px solid black;
-    box-shadow: 0px 0px 2px black inset;
+    border: 1px solid white;
+    box-shadow: 0px 0px 2px white inset;
     cursor: pointer;
     border-radius: 2px;
 
