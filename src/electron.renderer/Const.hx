@@ -17,10 +17,6 @@ class Const {
 		return new dn.Version(RAW_APP_VERSION);
 	}
 
-	public static function getAppBuildId() : Float {
-		return Std.int(  dn.MacroTools.getBuildTimeStampSeconds() / (60*60)  );
-	}
-
 	public static function getArch() {
 		return switch js.Node.process.arch {
 			case "x64": "64bits";
