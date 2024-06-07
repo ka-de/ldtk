@@ -491,7 +491,6 @@ class App extends dn.Process {
 			case C_Redo:
 			case C_SelectAll:
 			case C_ZenMode:
-			case C_ShowHelp:
 			case C_ToggleWorldMode:
 			case C_RunCommand:
 			case C_GotoPreviousWorldLayer:

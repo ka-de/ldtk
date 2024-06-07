@@ -266,7 +266,6 @@ enum AppCommand {
 	@k("ctrl y") C_Redo;
 	@k("ctrl a") C_SelectAll;
 	@k("tab") C_ZenMode;
-	@k("h") C_ShowHelp;
 	@k("shift w, ², `, [zqsd] w, [arrows] w") C_ToggleWorldMode;
 	@k("[debug] ctrl shift r, ctrl r") @input C_RunCommand;
 	@k("ctrl q") @input C_ExitApp;

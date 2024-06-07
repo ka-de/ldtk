@@ -199,13 +199,7 @@ class Editor extends Page {
 			App.ME.executeAppCommand(C_OpenEnumPanel);
 		});
 
-
 		jMainPanel.find("button.close").click( function(ev) onClose(ev.getThis()) );
-
-
-		jMainPanel.find("button.showHelp").click( function(_) {
-			App.ME.executeAppCommand(C_ShowHelp);
-		});
 
 		jMainPanel.find("button.settings").click( function(_) {
 			App.ME.executeAppCommand(C_AppSettings);
@@ -798,12 +792,6 @@ class Editor extends Page {
 
 			case C_ToggleGrid:
 				setGrid( !settings.v.grid );
-
-			case C_ShowHelp:
-				if( ui.Modal.isOpen( ui.modal.panel.Help ) )
-					ui.Modal.closeAll();
-				else
-					new ui.modal.panel.Help();
 
 			case C_ToggleDetails:
 				setShowDetails( !settings.v.showDetails );
